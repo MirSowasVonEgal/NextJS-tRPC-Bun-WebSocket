@@ -7,4 +7,8 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  publicRuntimeConfig: {
+    APP_URL: "http://game01.shademc.de:3000",
+    WS_URL: "ws://game01.shademc.de:3001"
+  }
 };
