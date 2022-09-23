@@ -6,7 +6,7 @@
     "dev:wss": "bun run nodemon --watch src --ext .ts,.tsx,js,jsx --signal SIGTERM --exec \"ts-node --project tsconfig.server.json src/server/wsServer.ts\"",
     "build:app": "bun next build",
     "start:app": "bun next start",
-    "start:wss": "ts-node --project tsconfig.server.json src/server/wsServer.ts"
+    "start:wss": "bun ts-node --project tsconfig.server.json src/server/wsServer.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.3.9",
