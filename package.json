@@ -23,6 +23,7 @@
     "zod": "^3.19.1"
   },
   "devDependencies": {
+    "@types/cookies": "^0.7.7",
     "@types/node": "^18.7.18",
     "@types/react": "^18",
     "@types/ws": "^8.5.3",

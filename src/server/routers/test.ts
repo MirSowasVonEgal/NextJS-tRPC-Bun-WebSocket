@@ -8,7 +8,6 @@ const ee = new EventEmitter();
 
 export const appRouter = t.router({
   getData: t.procedure.query(async ({ ctx }) => {
-    console.log(ctx.req.headers.authorization)
     const data = await readFile("src/server/test.db");
     return data.toString();
   }),
