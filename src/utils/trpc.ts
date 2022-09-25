@@ -60,6 +60,9 @@ export const trpc = createTRPCNext<AppRouter>({
         }),
         getEndingLink(ctx),
       ],
+
+  
+        
       /**
        * @link https://trpc.io/docs/data-transformers
        */
@@ -68,6 +71,7 @@ export const trpc = createTRPCNext<AppRouter>({
        * @link https://react-query.tanstack.com/reference/QueryClient
        */
       queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
+      
     };
   },
   /**

@@ -15,7 +15,7 @@ export const createContext = async ({
 }:
   | trpcNext.CreateNextContextOptions
   | NodeHTTPCreateContextFnOptions<IncomingMessage, ws>) => {
-    
+
   return {
     req,
     res,

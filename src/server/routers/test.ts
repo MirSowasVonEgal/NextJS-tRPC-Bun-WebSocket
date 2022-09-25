@@ -7,7 +7,8 @@ import { t } from '../trpc';
 const ee = new EventEmitter();
 
 export const appRouter = t.router({
-  getData: t.procedure.query(async () => {
+  getData: t.procedure.query(async ({ ctx }) => {
+    console.log(ctx.req.headers.authorization)
     const data = await readFile("src/server/test.db");
     return data.toString();
   }),
@@ -15,13 +16,12 @@ export const appRouter = t.router({
     z.object({
       text: z.string()
     }).required()
-  ).mutation(async ({ input }) => {
-    console.log("XXX")
+  ).mutation(async ({ input, ctx }) => {
     ee.emit('set', input.text)
     await writeFile("src/server/test.db", input.text);
     return input;
   }),
-  subData: t.procedure.subscription(async ({ input }) => {
+  subData: t.procedure.subscription(async ({ ctx }) => {
     return observable<string>((emit) => {
       ee.on('set', emit.next)
       return () => {
