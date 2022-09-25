@@ -1,11 +1,8 @@
-import { setCookie } from "cookies-next";
 import React, { useState } from "react";
 import { trpc } from "src/utils/trpc";
 
 export default function Home() {
   const context = trpc.useContext();
-
-  setCookie("auth", "Token");
 
   const query = trpc.test.getData.useQuery();
 
